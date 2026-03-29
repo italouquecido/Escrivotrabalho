@@ -116,27 +116,27 @@ public class JogoController : MonoBehaviour
     string letraSorteada = "";
     string[,] palavrasAtuais;
 
-    void Start()
+   void Start()
+{
+    dificuldade = PlayerPrefs.GetString("dificuldade", "facil");
+
+    if (dificuldade == "facil")
     {
-        dificuldade = PlayerPrefs.GetString("dificuldade", "facil");
-
-        if (dificuldade == "facil")
-        {
-            palavrasAtuais = palavrasFacil;
-        }
-        else if (dificuldade == "medio")
-        {
-            palavrasAtuais = palavrasMedio;
-        }
-        else
-        {
-            palavrasAtuais = palavrasDificil;
-        }
-
-        inputField.gameObject.SetActive(false);
-        StartCoroutine(RodarRoleta());
+        palavrasAtuais = palavrasFacil;
+    }
+    else if (dificuldade == "medio")
+    {
+        palavrasAtuais = palavrasMedio;
+    }
+    else
+    {
+        palavrasAtuais = palavrasDificil;
     }
 
+    inputField.lineType = TMP_InputField.LineType.SingleLine;
+    inputField.gameObject.SetActive(false);
+    StartCoroutine(RodarRoleta());
+}
     IEnumerator RodarRoleta()
     {
         roletaRodando = true;
