@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: b92c6a8d354f9d745a13c8730a3b17f1
+guid: 981804455ff74de41898c56a1f1ccbaa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7180908995028793991
-    second: Casual_0
-  - first:
-      213: -4416889954351128047
-    second: Casual_1
+      213: 186415832527761311
+    second: Rectangle 306_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,23 +139,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Casual_0
+      name: Rectangle 306_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 136
-        height: 117
+        width: 1016
+        height: 497
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 45, y: 50, z: 47, w: 50}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 975c6eaa059485c90800000000000000
-      internalID: -7180908995028793991
+      spriteID: f9f63564638469200800000000000000
+      internalID: 186415832527761311
       vertices: []
       indices: 
       edges: []
@@ -167,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4df724607631b634dbd3a1f1ed545af0
+    spriteID: d431eb5ee00ff6745afe2946ecfe6663
     internalID: 0
     vertices: []
     indices: 
@@ -177,8 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Casual_0: -7180908995028793991
-      Casual_1: -4416889954351128047
+      Rectangle 306_0: 186415832527761311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
