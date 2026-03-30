@@ -34,7 +34,7 @@ public class JogoController : MonoBehaviour
         {"G", "Animal", "GATO", "animal domestico", "mia", "tem bigodes"},
         {"H", "Animal", "HAMSTER", "roedor pequeno", "guarda comida nas bochechas", "roda em roda"},
         {"I", "Animal", "IGUANA", "reptil verde", "parece um dragao pequeno", "vive em areas quentes"},
-        {"J", "Animal", "JAGUAR", "felino manchado", "e o maior felino das americas", "caça na agua"},
+        {"J", "Animal", "JAGUAR", "felino manchado", "e o maior felino das americas", "caca na agua"},
         {"K", "Animal", "KOALA", "animal australiano", "dorme muito", "come folhas de eucalipto"},
         {"L", "Animal", "LEAO", "rei da selva", "tem juba", "vive em alcateias"},
         {"M", "Animal", "MACACO", "primata", "vive em arvores", "come banana"},
@@ -116,27 +116,29 @@ public class JogoController : MonoBehaviour
     string letraSorteada = "";
     string[,] palavrasAtuais;
 
-   void Start()
-{
-    dificuldade = PlayerPrefs.GetString("dificuldade", "facil");
+    void Start()
+    {
+        dificuldade = PlayerPrefs.GetString("dificuldade", "facil");
 
-    if (dificuldade == "facil")
-    {
-        palavrasAtuais = palavrasFacil;
-    }
-    else if (dificuldade == "medio")
-    {
-        palavrasAtuais = palavrasMedio;
-    }
-    else
-    {
-        palavrasAtuais = palavrasDificil;
+        if (dificuldade == "facil")
+        {
+            palavrasAtuais = palavrasFacil;
+        }
+        else if (dificuldade == "medio")
+        {
+            palavrasAtuais = palavrasMedio;
+        }
+        else
+        {
+            palavrasAtuais = palavrasDificil;
+        }
+
+        inputField.lineType = TMP_InputField.LineType.SingleLine;
+        inputField.gameObject.SetActive(false);
+        inputField.onSubmit.AddListener(delegate { VerificarResposta(); });
+        StartCoroutine(RodarRoleta());
     }
 
-    inputField.lineType = TMP_InputField.LineType.SingleLine;
-    inputField.gameObject.SetActive(false);
-    StartCoroutine(RodarRoleta());
-}
     IEnumerator RodarRoleta()
     {
         roletaRodando = true;
@@ -239,7 +241,7 @@ public class JogoController : MonoBehaviour
         {
             jogoAtivo = false;
             inputField.gameObject.SetActive(false);
-            textDica.text = "ACERTOU!";
+            textDica.text = "ACERTOU";
             PlayerPrefs.SetString("resultado", "vitoria");
             PlayerPrefs.SetString("palavraCorreta", palavraCorreta);
             PlayerPrefs.Save();
