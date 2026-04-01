@@ -1,17 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Derrota : MonoBehaviour
+public class TelaDerrota : MonoBehaviour
 {
-    // Botão: Voltar para Temas
-    public void IrParaTemas()
+    public AudioSource audioSource;
+    public AudioClip somDerrota;
+
+    void Start()
     {
-        SceneManager.LoadScene("Temas");
+        if (audioSource != null && somDerrota != null)
+            audioSource.PlayOneShot(somDerrota);
     }
 
-    // Botão: Jogar novamente
     public void JogarNovamente()
     {
         SceneManager.LoadScene("Jogo");
+    }
+
+    public void VoltarTemas()
+    {
+        SceneManager.LoadScene("Temas");
     }
 }

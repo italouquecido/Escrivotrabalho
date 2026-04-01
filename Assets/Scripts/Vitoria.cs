@@ -1,17 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Vitoria : MonoBehaviour
+public class TelaVitoria : MonoBehaviour
 {
-    // Botão: Voltar para Temas
-    public void IrParaTemas()
+    public AudioSource audioSource;
+    public AudioClip somVitoria;
+
+    void Start()
     {
-        SceneManager.LoadScene("Temas");
+        if (audioSource != null && somVitoria != null)
+            audioSource.PlayOneShot(somVitoria);
     }
 
-    // Botão: Jogar novamente
     public void JogarNovamente()
     {
         SceneManager.LoadScene("Jogo");
+    }
+
+    public void VoltarTemas()
+    {
+        SceneManager.LoadScene("Temas");
     }
 }

@@ -13,13 +13,16 @@ public class JogoController : MonoBehaviour
     public TextMeshProUGUI textRodada;
     public TMP_InputField inputField;
 
+    public AudioSource audioSource;
+    public AudioClip somAcerto;
+    public AudioClip somErro;
+
     int tentativas;
     int indiceDica;
     int rodada = 1;
     int maxRodadas = 3;
 
     string palavraCorreta;
-    string letraSorteada;
     string[,] palavrasAtuais;
     string[] dicasAtuais;
 
@@ -37,6 +40,8 @@ public class JogoController : MonoBehaviour
             palavrasAtuais = palavrasFacil;
 
         inputField.lineType = TMP_InputField.LineType.SingleLine;
+        inputField.onSubmit.AddListener(OnSubmitMobile);
+
         inputField.gameObject.SetActive(false);
 
         AtualizarRodada();
@@ -88,9 +93,8 @@ public class JogoController : MonoBehaviour
         int i = Random.Range(0, palavrasAtuais.GetLength(0));
 
         palavraCorreta = palavrasAtuais[i, 2];
-        letraSorteada = palavrasAtuais[i, 0];
 
-        textLetra.text = letraSorteada;
+        textLetra.text = palavrasAtuais[i, 0];
         textTema.text = "Tema: " + palavrasAtuais[i, 1];
 
         dicasAtuais = new string[3];
@@ -113,6 +117,16 @@ public class JogoController : MonoBehaviour
         textDica.text = texto;
     }
 
+    void OnSubmitMobile(string texto)
+    {
+        VerificarResposta();
+    }
+
+    public void BotaoEnviar()
+    {
+        VerificarResposta();
+    }
+
     public void VerificarResposta()
     {
         if (!jogoAtivo) return;
@@ -122,6 +136,9 @@ public class JogoController : MonoBehaviour
 
         if (resposta == palavraCorreta)
         {
+            if (audioSource != null && somAcerto != null)
+                audioSource.PlayOneShot(somAcerto);
+
             jogoAtivo = false;
             inputField.gameObject.SetActive(false);
 
@@ -139,6 +156,9 @@ public class JogoController : MonoBehaviour
         }
         else
         {
+            if (audioSource != null && somErro != null)
+                audioSource.PlayOneShot(somErro);
+
             tentativas--;
             textTentativas.text = "Tentativas: " + tentativas;
 
@@ -195,32 +215,32 @@ public class JogoController : MonoBehaviour
         }
     }
 
-    // ===== BANCO DE PALAVRAS =====
+    // ===== BANCO GIGANTE =====
 
     string[,] palavrasFacil = new string[,]
     {
         {"A","Animal","ARARA","ave colorida","fala","floresta"},
         {"B","Animal","BURRO","carga","cavalo","teimoso"},
         {"C","Animal","COBRA","rasteja","veneno","sem pernas"},
-        {"D","Animal","DONHA","pequena","rapida","insetos"},
+        {"D","Animal","DOGO","cachorro grande","forte","guarda"},
         {"E","Animal","EGUA","cavalo femea","fazenda","montaria"},
-        {"F","Animal","FURAO","domestico","pequeno","caca"},
-        {"G","Animal","GAMBA","noturno","filhotes","marsupial"},
+        {"F","Animal","FOCA","animal marinho","nada","frio"},
+        {"G","Animal","GATO","mia","pet","dorme"},
         {"H","Animal","HIPPO","grande","agua","africa"},
-        {"I","Animal","IRARA","arvore","rapido","mamifero"},
-        {"J","Animal","JIBOIA","cobra","grande","forca"},
+        {"I","Animal","IGUANA","reptil","verde","sol"},
+        {"J","Animal","JAGUAR","felino","rapido","selva"},
         {"K","Animal","KOALA","australia","dorme","folha"},
-        {"L","Animal","LONTRA","agua","brinca","nada"},
+        {"L","Animal","LEAO","rei","juba","forte"},
         {"M","Animal","MACACO","arvore","banana","salta"},
         {"N","Animal","NUTRO","roedor","agua","rio"},
         {"O","Animal","ONCA","felino","brasil","rapido"},
         {"P","Animal","PANDA","bambu","preto branco","china"},
         {"Q","Animal","QUATI","grupo","focinho","mata"},
         {"R","Animal","RAPOSA","esperta","laranja","rapida"},
-        {"S","Animal","SABIA","canta","brasil","passaro"},
-        {"T","Animal","TAPIR","grande","tromba","mata"},
+        {"S","Animal","SAPO","pula","verde","agua"},
+        {"T","Animal","TIGRE","listras","forte","selva"},
         {"U","Animal","URUBU","morto","voa","preto"},
-        {"V","Animal","VEADO","chifre","rapido","mata"},
+        {"V","Animal","VACA","leite","fazenda","capim"},
         {"W","Animal","WOMBAT","toca","noturno","australia"},
         {"X","Animal","XEXEU","ninho","canta","passaro"},
         {"Y","Animal","YAGUE","felino","manchado","selva"},
