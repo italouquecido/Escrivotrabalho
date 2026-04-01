@@ -9,7 +9,7 @@ public class JogoController : MonoBehaviour
     public TextMeshProUGUI textLetra;
     public TextMeshProUGUI textTema;
     public TextMeshProUGUI textDica;
-    public TextMeshProUGUI textTentativas;
+    public TextMeshProUGUI textTentativas; // agora mostra "Vidas"
     public TextMeshProUGUI textRodada;
     public TMP_InputField inputField;
 
@@ -17,7 +17,7 @@ public class JogoController : MonoBehaviour
     public AudioClip somAcerto;
     public AudioClip somErro;
 
-    int tentativas;
+    int vidas; // antes era tentativas
     int indiceDica;
     int rodada = 1;
     int maxRodadas = 3;
@@ -57,10 +57,10 @@ public class JogoController : MonoBehaviour
     {
         jogoAtivo = false;
 
-        tentativas = 3;
+        vidas = 3; // inicializa as vidas
         indiceDica = 0;
 
-        textTentativas.text = "Tentativas: " + tentativas;
+        textTentativas.text = "Vidas: " + vidas;
         textDica.text = "";
 
         string[] letras = {
@@ -159,10 +159,10 @@ public class JogoController : MonoBehaviour
             if (audioSource != null && somErro != null)
                 audioSource.PlayOneShot(somErro);
 
-            tentativas--;
-            textTentativas.text = "Tentativas: " + tentativas;
+            vidas--; // decrementa vida
+            textTentativas.text = "Vidas: " + vidas;
 
-            if (tentativas <= 0)
+            if (vidas <= 0)
             {
                 jogoAtivo = false;
                 inputField.gameObject.SetActive(false);
@@ -215,95 +215,75 @@ public class JogoController : MonoBehaviour
         }
     }
 
-    // ===== BANCO GIGANTE =====
+    // ===== BANCO DE PALAVRAS SUPER FÁCIL =====
 
     string[,] palavrasFacil = new string[,]
     {
-        {"A","Animal","ARARA","ave colorida","fala","floresta"},
-        {"B","Animal","BURRO","carga","cavalo","teimoso"},
-        {"C","Animal","COBRA","rasteja","veneno","sem pernas"},
-        {"D","Animal","DOGO","cachorro grande","forte","guarda"},
-        {"E","Animal","EGUA","cavalo femea","fazenda","montaria"},
-        {"F","Animal","FOCA","animal marinho","nada","frio"},
-        {"G","Animal","GATO","mia","pet","dorme"},
-        {"H","Animal","HIPPO","grande","agua","africa"},
-        {"I","Animal","IGUANA","reptil","verde","sol"},
-        {"J","Animal","JAGUAR","felino","rapido","selva"},
-        {"K","Animal","KOALA","australia","dorme","folha"},
-        {"L","Animal","LEAO","rei","juba","forte"},
-        {"M","Animal","MACACO","arvore","banana","salta"},
-        {"N","Animal","NUTRO","roedor","agua","rio"},
-        {"O","Animal","ONCA","felino","brasil","rapido"},
-        {"P","Animal","PANDA","bambu","preto branco","china"},
-        {"Q","Animal","QUATI","grupo","focinho","mata"},
-        {"R","Animal","RAPOSA","esperta","laranja","rapida"},
-        {"S","Animal","SAPO","pula","verde","agua"},
-        {"T","Animal","TIGRE","listras","forte","selva"},
-        {"U","Animal","URUBU","morto","voa","preto"},
-        {"V","Animal","VACA","leite","fazenda","capim"},
-        {"W","Animal","WOMBAT","toca","noturno","australia"},
-        {"X","Animal","XEXEU","ninho","canta","passaro"},
-        {"Y","Animal","YAGUE","felino","manchado","selva"},
-        {"Z","Animal","ZEBRA","listras","africa","cavalo"}
+        {"A","Animal","ABELHA","faz mel","tem listras","voa"},
+        {"B","Objeto","BOLA","redonda","usada no futebol","pula"},
+        {"C","Animal","CAVALO","tem quatro patas","faz galope","vive na fazenda"},
+        {"D","Parte do Corpo","DENTE","fica na boca","usado para comer","branco"},
+        {"E","Objeto","ESCOVA","limpa os dentes","penteia o cabelo","limpeza"},
+        {"F","Comida","FEIJAO","pretinho ou carioquinha","come com arroz","tem caldo"},
+        {"G","Animal","GATO","faz miau","tem bigodes","gosta de leite"},
+        {"H","Meio de Transporte","HELICOPTERO","voa no ar","tem helice","nao e aviao"},
+        {"I","Lugar","IGREJA","tem sino","lugar de orar","tem cruz"},
+        {"J","Animal","JACARE","vive na agua","tem bocao","tem escamas"},
+        {"L","Fruta","LARANJA","cor de fruta","faz suco","tem vitamina c"},
+        {"M","Animal","MACACO","gosta de banana","pula em arvore","faz careta"},
+        {"N","Natureza","NUVEM","fica no ceu","parece algodao","solta chuva"},
+        {"O","Comida","OVO","vem da galinha","tem gema","pode ser frito"},
+        {"P","Comida","PIPOCA","estoura na panela","come no cinema","e de milho"},
+        {"Q","Comida","QUEIJO","amarelo ou branco","rato gosta","vai no pao"},
+        {"R","Animal","RATO","tem medo de gato","gosta de queijo","tem rabo comprido"},
+        {"S","Animal","SAPO","verde e pula","vive na lagoa","come mosca"},
+        {"T","Objeto","TELEFONE","usado para ligar","tem numero","faz trim trim"},
+        {"U","Fruta","UVA","pequena e redonda","pode ser verde ou roxa","cresce em cachos"},
+        {"V","Animal","VACA","da leite","faz muu","tem chifres"},
+        {"Z","Animal","ZEBRA","tem listras","parece cavalo","preto e branco"}
     };
 
     string[,] palavrasMedio = new string[,]
     {
-        {"A","Profissao","ATOR","filmes","personagem","fama"},
-        {"B","Profissao","BOMBEIRO","fogo","salva","agua"},
-        {"C","Profissao","COZINHEIRO","comida","receita","cozinha"},
-        {"D","Profissao","DENTISTA","dente","tratamento","consulta"},
-        {"E","Profissao","ENGENHEIRO","projeto","construcao","calculo"},
-        {"F","Profissao","FOTOGRAFO","foto","camera","imagem"},
-        {"G","Profissao","GARCOM","restaurante","serve","cliente"},
-        {"H","Profissao","HISTORIADOR","passado","estudo","historia"},
-        {"I","Profissao","INSTRUTOR","ensina","treino","aula"},
-        {"J","Profissao","JORNALISTA","noticia","reportagem","midia"},
-        {"K","Esporte","KARATE","luta","golpe","kimono"},
-        {"L","Profissao","LOCUTOR","radio","voz","fala"},
-        {"M","Profissao","MEDICO","hospital","cura","paciente"},
-        {"N","Profissao","NUTRICIONISTA","dieta","comida","saude"},
-        {"O","Profissao","ODONTOLOGO","boca","dente","tratamento"},
-        {"P","Profissao","PILOTO","aviao","voar","altura"},
-        {"Q","Ciencia","QUIMICA","reacao","laboratorio","materia"},
-        {"R","Profissao","ROTEIRISTA","historia","dialogo","filme"},
-        {"S","Profissao","SOLDADO","defesa","guerra","treino"},
-        {"T","Profissao","TECNICO","conserta","equipamento","problema"},
-        {"U","Profissao","URBANISTA","cidade","planeja","mapa"},
-        {"V","Profissao","VETERINARIO","animal","pet","clinica"},
-        {"W","Tecnologia","WIFI","internet","rede","senha"},
-        {"X","Instrumento","XILOFONE","musica","teclas","som"},
-        {"Y","Tecnologia","YOUTUBE","video","canal","internet"},
-        {"Z","Profissao","ZOOLOGO","animal","estudo","zoologico"}
+        {"A","Objeto","ANEL","usa no dedo","pode ser de ouro","acessorio"},
+        {"B","Fruta","BANANA","amarela","fruta do macaco","comprida"},
+        {"C","Objeto","CADEIRA","usada para sentar","tem quatro pernas","tem na sala"},
+        {"D","Natureza","DIA","tem sol","claro","contrario de noite"},
+        {"E","Objeto","ESPELHO","reflete a imagem","feito de vidro","usado para se ver"},
+        {"F","Objeto","FACA","usada para cortar","fica na cozinha","e afiada"},
+        {"G","Animal","GALINHA","bota ovo","tem penas","faz cocoricó"},
+        {"I","Lugar","ILHA","terra cercada de agua","tem praia","fica no mar"},
+        {"J","Objeto","JANELA","fica na parede","pode abrir e fechar","da para ver a rua"},
+        {"L","Objeto","LAPIZ","usado para escrever","tem grafite","usa na escola"},
+        {"M","Objeto","MARTELO","bate prego","ferramenta","pesado"},
+        {"N","Natureza","NEVE","gelo que cai do ceu","muito gelada","branca"},
+        {"O","Parte do Corpo","OUVIDO","usado para escutar","fica na cabeca","orelha"},
+        {"P","Objeto","PORTA","entrada da casa","tem macaneta","abre e fecha"},
+        {"R","Objeto","RELOGIO","mostra as horas","fica no pulso","faz tic tac"},
+        {"S","Clima","SOL","bola de fogo","aquece a terra","brilha de dia"},
+        {"T","Objeto","TESOURA","usada para cortar papel","tem duas laminas","objeto escolar"},
+        {"U","Objeto","URSO","animal de pelucia","tem muito pelo","vive na floresta"},
+        {"V","Objeto","VASSOURA","usada para varrer","limpa o chao","tem cabo"},
+        {"X","Bebida","XICARA","usada para tomar cafe","tem asa","pequena"}
     };
 
     string[,] palavrasDificil = new string[,]
     {
-        {"A","Ciencia","ATOMO","materia","particula","estrutura"},
-        {"B","Geografia","BALTICO","mar","europa","frio"},
-        {"C","Historia","CZAR","rei","russia","imperio"},
-        {"D","Ciencia","DNA","genetica","codigo","celula"},
-        {"E","Filosofia","ETICA","moral","certo","errado"},
-        {"F","Ciencia","FOTON","luz","energia","rapido"},
-        {"G","Historia","GLADIADOR","roma","arena","luta"},
-        {"H","Ciencia","HIPOTESE","teste","ideia","metodo"},
-        {"I","Filosofia","IMANENCIA","conceito","ser","existencia"},
-        {"J","Historia","JACOBINO","franca","revolucao","grupo"},
-        {"K","Historia","KAMIKAZE","guerra","aviao","ataque"},
-        {"L","Ciencia","LACUNA","falha","vazio","erro"},
-        {"M","Ciencia","MITOSE","celula","divisao","crescimento"},
-        {"N","Filosofia","NIILISMO","nada","sentido","filosofia"},
-        {"O","Ciencia","OSMOSE","agua","membrana","equilibrio"},
-        {"P","Ciencia","PLASMA","estado","energia","sol"},
-        {"Q","Ciencia","QUARK","particula","fisica","proton"},
-        {"R","Historia","RENASCIMENTO","arte","europa","cultura"},
-        {"S","Ciencia","SINERGIA","grupo","forca","resultado"},
-        {"T","Ciencia","TEORIA","explica","ciencia","evidencia"},
-        {"U","Ciencia","UNIVERSO","espaco","galaxia","tudo"},
-        {"V","Filosofia","VIRTUDE","moral","bem","etica"},
-        {"W","Historia","WATERLOO","batalha","napoleao","fim"},
-        {"X","Ciencia","XENOFOBIA","medo","estranho","rejeicao"},
-        {"Y","Historia","YALTA","guerra","acordo","reuniao"},
-        {"Z","Ciencia","ZIGOTO","vida","inicio","celula"}
+        {"A","Objeto","AVIAO","tem asas","voa com passageiros","tem piloto"},
+        {"B","Objeto","BICICLETA","tem duas rodas","tem pedal","anda na rua"},
+        {"C","Objeto","CAMPO","tem muita grama","onde joga bola","lugar aberto"},
+        {"D","Comida","DOCE","tem muito acucar","crianca adora","balas e pirulitos"},
+        {"E","Lugar","ESCOLA","onde o aluno estuda","tem professor","tem lousa"},
+        {"F","Natureza","FOGO","e muito quente","queima","faz fumaca"},
+        {"G","Objeto","GARRAFA","guarda agua","pode ser de plastico","tem tampa"},
+        {"J","Lugar","JARDIM","tem muitas flores","tem grama","lugar bonito"},
+        {"L","Bebida","LEITE","vem da vaca","e branco","bebe no cafe"},
+        {"M","Objeto","MOCHILA","guarda livros","carrega nas costas","usa na escola"},
+        {"N","Natureza","NOITE","tem lua","escuro","hora de dormir"},
+        {"O","Parte do Corpo","OLHO","usado para ver","fica no rosto","tem iris"},
+        {"P","Comida","PAO","compra na padaria","come no cafe","tem farinha"},
+        {"S","Objeto","SAPATO","usa no pe","tem cadarco","anda no chao"},
+        {"T","Objeto","TELEVISAO","passa desenho","tem tela","tem controle remoto"},
+        {"V","Objeto","VELA","clarea no escuro","derrete","tem pavio"}
     };
 }
