@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: c61650013be362e41a163e97fd2a24fc
+guid: 17c1f0991b267bb42ac459275cc53739
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7759793972810183834
-    second: cuadadro (2)_0
+      213: 2401135711197584893
+    second: Derrota_0
+  - first:
+      213: -6100477060502866924
+    second: Derrota_1
+  - first:
+      213: -3040763633702077399
+    second: Derrota_2
+  - first:
+      213: -4469559408032052304
+    second: Derrota_3
+  - first:
+      213: -4580613044227339228
+    second: Derrota_4
+  - first:
+      213: 5255206036456820525
+    second: Derrota_5
+  - first:
+      213: -7722335174126338603
+    second: Derrota_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,6 +116,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,23 +157,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cuadadro (2)_0
+      name: Derrota_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1110
-        height: 333
+        width: 333
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 68, y: 61, z: 75, w: 61}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66b8e60be7caf4490800000000000000
-      internalID: -7759793972810183834
+      spriteID: dfddf63253c825120800000000000000
+      internalID: 2401135711197584893
       vertices: []
       indices: 
       edges: []
@@ -164,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e9e1d0d446d639946a17ae0facbc3ceb
+    spriteID: 7a9bc36f3f4e47c449b8267e6b633aef
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +192,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cuadadro (2)_0: -7759793972810183834
+      Derrota_0: 2401135711197584893
+      Derrota_1: -6100477060502866924
+      Derrota_2: -3040763633702077399
+      Derrota_3: -4469559408032052304
+      Derrota_4: -4580613044227339228
+      Derrota_5: 5255206036456820525
+      Derrota_6: -7722335174126338603
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

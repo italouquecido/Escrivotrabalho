@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: c61650013be362e41a163e97fd2a24fc
+guid: 91b597da69168544aac0b10525c3c983
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7759793972810183834
-    second: cuadadro (2)_0
+      213: -7307350300286322758
+    second: Group 213_0
+  - first:
+      213: -7137752621288433123
+    second: Group 213_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +87,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,6 +101,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,23 +142,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cuadadro (2)_0
+      name: Group 213_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1110
-        height: 333
+        width: 334
+        height: 217
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 68, y: 61, z: 75, w: 61}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66b8e60be7caf4490800000000000000
-      internalID: -7759793972810183834
+      spriteID: ab7f61e2e93179a90800000000000000
+      internalID: -7307350300286322758
       vertices: []
       indices: 
       edges: []
@@ -164,7 +167,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e9e1d0d446d639946a17ae0facbc3ceb
+    spriteID: 22daee27ee41b1a40baa236dd80f8f03
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +177,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cuadadro (2)_0: -7759793972810183834
+      Group 213_0: -7307350300286322758
+      Group 213_1: -7137752621288433123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

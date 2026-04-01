@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: c61650013be362e41a163e97fd2a24fc
+guid: d60a89ddf9110a44ca5a69f906414a48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7759793972810183834
-    second: cuadadro (2)_0
+      213: -8449918439324870227
+    second: Group 217_0
+  - first:
+      213: -3109085952566776632
+    second: Group 217_1
+  - first:
+      213: -6162011238803324337
+    second: Group 217_2
+  - first:
+      213: -7181562272297931532
+    second: Group 217_3
+  - first:
+      213: -8957994176386097631
+    second: Group 217_4
+  - first:
+      213: -1619149204003472764
+    second: Group 217_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +99,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,6 +113,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,23 +154,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cuadadro (2)_0
+      name: Group 217_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1110
-        height: 333
+        width: 344
+        height: 107
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 68, y: 61, z: 75, w: 61}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66b8e60be7caf4490800000000000000
-      internalID: -7759793972810183834
+      spriteID: da99403f2fbdbba80800000000000000
+      internalID: -8449918439324870227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Group 217_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 0
+        width: 233
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cca91d7cce4ad4d0800000000000000
+      internalID: -3109085952566776632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Group 217_2
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 0
+        width: 99
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42c9211d632c7aa0800000000000000
+      internalID: -6162011238803324337
       vertices: []
       indices: 
       edges: []
@@ -164,7 +223,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e9e1d0d446d639946a17ae0facbc3ceb
+    spriteID: 04b165e140f0df14e893c41afc7fbf1c
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +233,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cuadadro (2)_0: -7759793972810183834
+      Group 217_0: -8449918439324870227
+      Group 217_1: -3109085952566776632
+      Group 217_2: -6162011238803324337
+      Group 217_3: -7181562272297931532
+      Group 217_4: -8957994176386097631
+      Group 217_5: -1619149204003472764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
