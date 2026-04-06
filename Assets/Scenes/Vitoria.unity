@@ -415,8 +415,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1241554109}
-        m_TargetAssemblyTypeName: Vitoria, Assembly-CSharp
-        m_MethodName: IrParaTemas
+        m_TargetAssemblyTypeName: TelaVitoria, Assembly-CSharp
+        m_MethodName: VoltarTemas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
