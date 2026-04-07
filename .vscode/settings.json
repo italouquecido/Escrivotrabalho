@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Trabalho Faculdade.slnx"
+    "dotnet.defaultSolution": "Escrivotrabalho.slnx"
 }
