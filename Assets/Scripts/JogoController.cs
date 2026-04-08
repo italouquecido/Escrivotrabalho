@@ -12,6 +12,7 @@ public class JogoController : MonoBehaviour
     public TextMeshProUGUI textTentativas; // agora mostra "Vidas"
     public TextMeshProUGUI textRodada;
     public TMP_InputField inputField;
+    public TextMeshProUGUI textPontuacao;
 
     public AudioSource audioSource;
     public AudioClip somAcerto;
@@ -21,6 +22,7 @@ public class JogoController : MonoBehaviour
     int indiceDica;
     int rodada = 1;
     int maxRodadas = 3;
+    int pontuacao = 0;
 
     string palavraCorreta;
     string[,] palavrasAtuais;
@@ -43,6 +45,7 @@ public class JogoController : MonoBehaviour
         inputField.onSubmit.AddListener(OnSubmitMobile);
 
         inputField.gameObject.SetActive(false);
+        textPontuacao.text = "Pontos: " + pontuacao;
 
         AtualizarRodada();
         StartCoroutine(RodarRoleta());
@@ -136,6 +139,8 @@ public class JogoController : MonoBehaviour
 
         if (resposta == palavraCorreta)
         {
+            pontuacao += 100;
+            textPontuacao.text = "Pontos: " + pontuacao;
             if (audioSource != null && somAcerto != null)
                 audioSource.PlayOneShot(somAcerto);
 
@@ -160,6 +165,10 @@ public class JogoController : MonoBehaviour
                 audioSource.PlayOneShot(somErro);
 
             vidas--; // decrementa vida
+            pontuacao -= 20;
+            if (pontuacao < 0) pontuacao = 0;
+
+            textPontuacao.text = "Pontos: " + pontuacao;
             textTentativas.text = "Vidas: " + vidas;
 
             if (vidas <= 0)
