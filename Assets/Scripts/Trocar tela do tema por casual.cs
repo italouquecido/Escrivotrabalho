@@ -18,6 +18,11 @@ public class Trocarteladotemaporcasual : MonoBehaviour
         SceneManager.LoadScene("Jogo");
     }
 
+    public void BluetoothManager()
+    {
+        SceneManager.LoadScene("BluetoothManager");
+    }
+
     public void EscolherFacil()
     {
         PlayerPrefs.SetString("dificuldade", "facil");
