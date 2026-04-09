@@ -20,7 +20,7 @@ public class Trocarteladotemaporcasual : MonoBehaviour
 
     public void BluetoothManager()
     {
-        SceneManager.LoadScene("BluetoothManager");
+        SceneManager.LoadScene("Bluetooth1");
     }
 
     public void EscolherFacil()

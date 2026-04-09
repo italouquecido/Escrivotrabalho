@@ -24,8 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Vitoria.unity
     guid: b36b2422929f2894ba2260ad0a152df5
   - enabled: 1
-    path: Assets/Scenes/BluetoothManager.unity
-    guid: 1c05a807dacef8f448d223b08112280e
+    path: Assets/Scenes/Bluetooth2.unity
+    guid: 64688f522278b4c4bb77dfd00c49215d
+  - enabled: 1
+    path: Assets/Scenes/Bluetooth1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
